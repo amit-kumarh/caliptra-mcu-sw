@@ -55,9 +55,13 @@ pub(crate) const CMD_POPULATE_IDEV_MLDSA87_CERT: u32 = 0x4944_4D50; // "IDMP"
 
 // ---- DPE (Caliptra `InvokeDpeCommand`) ------------------------------------
 
-/// Caliptra mailbox command ID for `INVOKE_DPE`.
-/// Mirrored from `caliptra-api::CommandId::INVOKE_DPE`.
+/// Caliptra mailbox command ID for `INVOKE_DPE_ECC384`.
+/// Mirrored from `caliptra-api::CommandId::INVOKE_DPE_ECC384`.
 pub(crate) const CMD_INVOKE_DPE: u32 = 0x4450_4543; // "DPEC"
+
+/// Caliptra mailbox command ID for `INVOKE_DPE_MLDSA87`.
+/// Mirrored from `caliptra-api::CommandId::INVOKE_DPE_MLDSA87`.
+pub(crate) const CMD_INVOKE_DPE_MLDSA87: u32 = 0x4450_454D; // "DPEM"
 
 /// Caliptra mailbox command ID for `CERTIFY_KEY_CHUNKS`.
 /// Mirrored from `caliptra-api::CommandId::CERTIFY_KEY_CHUNKS`.
@@ -79,7 +83,11 @@ pub(crate) const DPE_RESPONSE_MAGIC: u32 = 0x4450_4552; // "DPER"
 
 /// DPE profile used by Caliptra's runtime DPE — P-384 / SHA-384.
 /// Mirrored from `caliptra-api::DPE_PROFILE` (`DpeProfile::P384Sha384 = 4`).
-pub(crate) const DPE_PROFILE_P384_SHA384: u32 = 4;
+pub const DPE_PROFILE_P384_SHA384: u32 = 4;
+
+/// DPE profile used by Caliptra's runtime DPE — ML-DSA-87.
+/// Mirrored from `caliptra-api::DpeProfile::Mldsa87 = 5`.
+pub const DPE_PROFILE_MLDSA87: u32 = 5;
 
 /// DPE `DeriveContext` command ID (`dpe::commands::Command::DERIVE_CONTEXT`).
 pub(crate) const DPE_CMD_DERIVE_CONTEXT: u32 = 0x08;
